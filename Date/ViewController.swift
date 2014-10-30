@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		view.backgroundColor = UIColor.greenColor();
+
+		//0.0 is totally transparent, 1.0 is totally opaque
+		view.alpha = 0.4;	//or try 0.75
 	}
 
 	override func didReceiveMemoryWarning() {

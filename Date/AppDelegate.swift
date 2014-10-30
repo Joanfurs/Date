@@ -16,6 +16,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		//Demonstrate that we can call a type method
+		//even when no objects of the type currently exist.
+		println("A year has \(Date.yearLength()) months.");
+		
+		//Call the init method that takes no parameters.
+		var today: Date = Date();
+		
+		//Two ways to do print the same string.
+		println("Today is \(today.description).");
+		println("Today is \(today).");
+		
+		println("Today is day number \(today.day) out of \(today.monthLength()) in month number \(today.month).");
+		
+		//Also calls the willSet and didSet property observers (if any) for the day property.
+		today.day = 1;
+		
+		//Move the object one day forward.
+		today.next();
+		println("The second day of this month is \(today).");
+		
+		//Also calls the willSet and didSet property observers (if any) for the day property.
+		today.day = 20;
+		
+		//Move the object one day back.
+		today.prev();
+		println("The day before 20th was \(today).");
+		
+		//Call the init method that takes three parameters.
+		var independenceDay: Date = Date(month: 7, day: 4, year: 1776);
+		println("Independence Day was \(independenceDay).");
+		
+		//Move the object one month forward.
+		independenceDay.next(independenceDay.monthLength());
+		println("America was one month old on \(independenceDay).");
+		
+		
+		//Move the object one month back.
+		independenceDay.prev(61);
+		println("America was about to be born in a month  on \(independenceDay).");
+		
+		
+		today.day = 1
+		today.month = 3
+		today.year = 2012
+		println("Day X is \(today.month)/\(today.day)/\(today.year).")
+		
+		today.prev()
+		println("The day before Day X was \(today).")
+		
+		
+		
+		today.day = 1
+		today.month = 1
+		today.year = 2012
+		println("Day Y is \(today.month)/\(today.day)/\(today.year).")
+		
+		today.prev()
+		println("The day before Day Y was \(today).")
+		
+		
+		
+		today.day = 8
+		today.month = 1
+		today.year = 2012
+		println("Day Z is \(today.month)/\(today.day)/\(today.year).")
+		
+		today.prev(7)
+		println("7 days before Day Z was \(today).")
+
 		return true
 	}
 

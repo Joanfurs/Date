@@ -115,47 +115,25 @@ class Date: NSObject {
 		return 12;
 	}
 	
-	
+	// HOMEWORK
 	
 	func prev () -> Void {
 		if day != 1 {
 			--day;
 			return;
-		} else
-		if month == 1 || month == 2 || month == 4 || month == 6 || month == 8 || month == 9 || month == 11 {
-			day = 31
-			} else
-		if month == 5 || month == 7 || month == 10 || month == 12  {
-			day = 30
-			} else
-		if month == 3 {
-			var isLeap: Bool;
-
-			if year % 400 == 0 {
-			isLeap = true;
-			} else if year % 100 == 0 {
-			isLeap = false;
-			} else if year % 4 == 0 {
-			isLeap = true;
-			} else {
-			isLeap = false;
-			}
-
-			if isLeap {
-			day = 29
-			} else {
-			day = 28
-			}
 		}
 		
 		if month != 1 {
 			--month;
+			day = monthLength();
 			return;
-		}
-		
+			}
+	
 		month = 12;
 		--year;
+		day = monthLength();
 	}
+	
 	
 	func prev(distance: Int) {
 		if distance < 0 {

@@ -59,23 +59,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		today.day = 1
-		today.month = 3
+		today.month = 1
 		today.year = 2012
 		println("Day X is \(today.month)/\(today.day)/\(today.year).")
 		
 		today.prev()
 		println("The day before Day X was \(today).")
 		
-		
-		
 		today.day = 1
-		today.month = 1
+		today.month = 7
 		today.year = 2012
 		println("Day Y is \(today.month)/\(today.day)/\(today.year).")
 		
 		today.prev()
 		println("The day before Day Y was \(today).")
-		
 		
 		
 		today.day = 8
